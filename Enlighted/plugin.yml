@@ -1,0 +1,17 @@
+name: Enlighted
+main: com.github.CubieX.Enlighted.Enlighted
+version: 1.0.0
+description: Lights up a players surrounding when holding a torch in hand
+
+commands:
+    el:
+      description: Using Enlighted
+      usage: /el version | reload
+
+permissions:
+    enlighted.use:
+        description: Allows using Enlighted
+        default: op
+    enlighted.admin:
+        description: Allows use of /el reload
+        default: op

@@ -1,0 +1,14 @@
+# do NOT change the config version!
+config_version: 1
+# set locale for user dialog messages
+language: de
+# enable debug output
+debug: false
+# ID of torch item to be held in hand
+torchID: 50
+# ID of light emitting block (e.g. 89 for glowstone)
+lightBlockID: 89
+# global Light. If enabled, lightBlocks will be visible for ALL players.
+# not only for the player with the torch in hand
+# This is NOT recommended for servers with > 50 active players at a time!
+globalLight: false
