@@ -1,5 +1,7 @@
 name: Enlighted
 main: com.github.CubieX.Enlighted.Enlighted
+author: CubieX
+softdepend: [PermissionsEx, zPermissions, bPermissions, PermissionsBukkit]
 version: 1.0.0
 description: Lights up a players surrounding when holding a torch in hand
 

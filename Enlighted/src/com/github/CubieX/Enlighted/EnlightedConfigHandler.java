@@ -42,6 +42,6 @@ public class EnlightedConfigHandler
       config = plugin.getConfig(); // new assignment necessary when returned value is assigned to a variable or static field(!)
       plugin.readConfigValues();
 
-      sender.sendMessage("[" + ChatColor.GREEN + "Info" + ChatColor.WHITE + "] " + ChatColor.GREEN + plugin.getDescription().getName() + " " + plugin.getDescription().getVersion() + " reloaded!");       
+      sender.sendMessage(Enlighted.logPrefix + plugin.getDescription().getName() + " " + plugin.getDescription().getVersion() + " reloaded!");       
    } 
 }
