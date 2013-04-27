@@ -1,19 +1,16 @@
 package com.github.CubieX.Enlighted;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Logger;
-
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Enlighted extends JavaPlugin
 {
-   public static final Logger log = Logger.getLogger("Minecraft");
-   ArrayList<String> playersInSM = new ArrayList<String>();
-
-   static final String logPrefix = "[TimedRanks] "; // Prefix to go in front of all log entries
+   public static final Logger log = Bukkit.getServer().getLogger();
+   static final String logPrefix = "[Enlighted] "; // Prefix to go in front of all log entries
 
    private Enlighted plugin = null;
    private EnlightedCommandHandler comHandler = null;
@@ -50,13 +47,13 @@ public class Enlighted extends JavaPlugin
 
       if (!hookToPermissionSystem())
       {
-         log.info(logPrefix + " - Disabled due to no superperms compatible permission system found!");
+         log.info(logPrefix + "- Disabled due to no superperms compatible permission system found!");
          getServer().getPluginManager().disablePlugin(this);
          return;
       }
 
-      eListener = new EnlightedEntityListener(this, log);      
-      comHandler = new EnlightedCommandHandler(this, cHandler, log);      
+      eListener = new EnlightedEntityListener(this);      
+      comHandler = new EnlightedCommandHandler(this, cHandler);      
       getCommand("el").setExecutor(comHandler);
 
       schedHandler = new EnlightedSchedulerHandler(this);
@@ -110,7 +107,8 @@ public class Enlighted extends JavaPlugin
 
    @Override
    public void onDisable()
-   {      
+   {
+      this.getServer().getScheduler().cancelAllTasks();
       cHandler = null;
       eListener = null;
       comHandler = null;
@@ -163,6 +161,11 @@ public class Enlighted extends JavaPlugin
       } else {
          return null;
       }
+   }
+   
+   public void startBlockChangeDelayerScheduler(final Location[] locList, final Player currPlayer)
+   {
+      schedHandler.startBlockChangeDelayerScheduler_SynchDelayed(locList, currPlayer);
    }
 }
 

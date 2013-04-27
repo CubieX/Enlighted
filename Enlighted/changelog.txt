@@ -1,5 +1,10 @@
 Changelog for Enlighted by CubieX
 ---------------------------------
 
+V1.0.1
+- Changed Logger to Bukkit-Logger
+- corrected logPrefix
+- improved player checks and fake block handling
+
 V. 1.0.0
 - Initial version
