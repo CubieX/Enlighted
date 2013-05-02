@@ -1,5 +1,7 @@
 Changelog for Enlighted by CubieX
 ---------------------------------
+V1.0.2
+- fixed admin permission in commandHandler
 
 V1.0.1
 - Changed Logger to Bukkit-Logger

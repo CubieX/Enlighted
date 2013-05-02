@@ -42,7 +42,7 @@ public class EnlightedCommandHandler implements CommandExecutor
             }    
             if (args[0].equalsIgnoreCase("reload")) // argument 0 is given and correct
             {            
-               if(sender.hasPermission("enlighted.reload"))
+               if(sender.hasPermission("enlighted.admin"))
                {                        
                   cHandler.reloadConfig(sender);
                   return true;
